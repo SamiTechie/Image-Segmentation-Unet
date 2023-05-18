@@ -6,7 +6,7 @@ from torchvision import transforms
 from torchvision import transforms
 
 def load_model(path, model):
-    model.load_state_dict(torch.load(path))
+    model.load_state_dict(torch.load(path, map_location=torch.device('cpu')))
     return model
 
 def predict(img):
